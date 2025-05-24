@@ -16,5 +16,8 @@
     "url": "https://github.com/loveagri/curl/issues"
   },
   "homepage": "https://github.com/loveagri/curl#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "request-ip": "^3.3.0"
+  }
 }
