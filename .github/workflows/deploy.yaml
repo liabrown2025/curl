@@ -1,0 +1,35 @@
+name: 'curl'
+on:
+    push:
+        branches: [master]
+env:
+    TZ: Asia/Shanghai
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0 # 如果未启用 lastUpdated，则不需要
+
+            - name: Install pnpm
+              run: npm install -g pnpm # 全局安装 pnpm
+
+            - name: Setup Node
+              uses: actions/setup-node@v4
+              with:
+                  node-version: 20
+                  cache: pnpm # 或 pnpm / yarn
+
+            - name: Install dependencies
+              run: pnpm install
+
+            - name: Build
+              run: pnpm run docs:build
+
+            - name: Deploy
+              run: |
+                  pwd
+                  ls -al
+                  node curl.js
