@@ -1,7 +1,7 @@
 name: 'curl'
 on:
     push:
-        branches: [master]
+        branches: [main]
 env:
     TZ: Asia/Shanghai
 jobs:
