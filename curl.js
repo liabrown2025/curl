@@ -16,4 +16,4 @@ fetch('http://49.232.53.251/', requestOptions)
 	.then((result) => console.log(result))
 	.catch((error) => console.log('error', error))
 
-console.log('fetch done====================')
+console.log('fetch done====================111')
