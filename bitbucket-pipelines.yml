@@ -1,0 +1,24 @@
+# bitbucket-pipelines.yml
+image: node:22 # 使用 Node.js 16 官方镜像（可根据需要改为 14、18 等）
+
+pipelines:
+    default: # 默认分支（如 main/master）触发
+        - step:
+              name: Install & Test
+              caches:
+                  - node # 缓存 node_modules 加速后续构建
+              script:
+                  - echo '------------------------------------------'
+                  - pwd
+                  - node curl.js
+                  - echo '------------------------------------------'
+    branches:
+        develop: # develop 分支触发额外步骤（如预发布）
+            - step:
+                  name: Deploy to Staging
+                  deployment: staging # Bitbucket 部署环境标记
+                  script:
+                      - echo "模拟部署到预发布环境..."
+                      # 实际部署命令示例（需替换为你的脚本）：
+                      # - scp -r dist/ user@staging-server:/path/to/app
+                      # - ssh user@staging-server "cd /path/to/app && pm2 restart app"

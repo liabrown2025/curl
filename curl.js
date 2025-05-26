@@ -16,4 +16,4 @@ fetch('https://test.dotohi.com/', requestOptions)
 	.then((result) => console.log(result))
 	.catch((error) => console.log('error', error))
 
-console.log('fetch done====================done')
+console.log('fetch done========================done')
