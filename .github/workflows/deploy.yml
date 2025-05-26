@@ -22,9 +22,6 @@ jobs:
                   node-version: 20
                   cache: pnpm # 或 pnpm / yarn
 
-            - name: Install dependencies
-              run: pnpm install
-
             - name: Deploy
               run: |
                   pwd
