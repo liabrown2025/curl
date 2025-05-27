@@ -1,11 +1,13 @@
-var myHeaders = new fetch.Headers()
-myHeaders.append('User-Agent', 'Apifox/1.0.0 (https://apifox.com)')
+const myHeaders = new fetch.Headers()
+myHeaders.append(
+	'User-Agent',
+	'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'
+)
 myHeaders.append('Accept', '*/*')
-myHeaders.append('Host', 'test.dotohi.com')
-myHeaders.append('loveagri', 'you')
 myHeaders.append('Connection', 'keep-alive')
+myHeaders.append('loveagri', 'you')
 
-var requestOptions = {
+const requestOptions = {
 	method: 'GET',
 	headers: myHeaders,
 	redirect: 'follow',
