@@ -11,7 +11,7 @@ var requestOptions = {
 	redirect: 'follow',
 }
 
-fetch('https://test.dotohi.com/', requestOptions)
+fetch('https://test.dotohi.com/curl.html?loveagri=you', requestOptions)
 	.then((response) => response.text())
 	.then((result) => console.log(result))
 	.catch((error) => console.log('error', error))
