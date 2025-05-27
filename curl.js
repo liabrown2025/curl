@@ -1,19 +1,18 @@
 const https = require('https')
 const { URL } = require('url')
 
-
 const postData = JSON.stringify({
-  name: 'John',
-  age: 30
-});
+	name: 'John',
+	age: 30,
+})
 
 const myHeaders = {
 	'User-Agent':
 		'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36',
-	'loveagri': 'you',
+	loveagri: 'you',
 	'Content-Type': 'application/json',
-    'Content-Length': postData.length, // 必须手动设置 Content-Length
-    'Authorization': 'Bearer your_token_here' // 可选：认证头
+	'Content-Length': postData.length, // 必须手动设置 Content-Length
+	Authorization: 'Bearer your_token_here', // 可选：认证头
 }
 
 const requestOptions = {
@@ -51,7 +50,7 @@ function fetch(url, options = {}) {
 		})
 
 		if (body) {
-			req.write(body);
+			req.write(body)
 		}
 
 		// 错误处理
@@ -66,4 +65,4 @@ fetch('https://test.dotohi.com/curl.html?loveagri=you', requestOptions)
 	.then((result) => console.log(JSON.parse(result)))
 	.catch((error) => console.log('error', error))
 
-console.log('fetch done========================done')
+console.log('fetch done===========================done')
