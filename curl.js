@@ -1,4 +1,4 @@
-var myHeaders = new Headers()
+var myHeaders = new fetch.Headers()
 myHeaders.append('User-Agent', 'Apifox/1.0.0 (https://apifox.com)')
 myHeaders.append('Accept', '*/*')
 myHeaders.append('Host', 'test.dotohi.com')
