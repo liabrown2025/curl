@@ -1,20 +1,20 @@
 const https = require('https')
 const { URL } = require('url')
 
-
- const myHeaders= {
-	'User-Agent':	'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36',
-    'Authorization': 'Bearer token123',
-    'User-Agent':
-	'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36',
-	'loveagri':'you'
-  }
+const myHeaders = {
+	'User-Agent':
+		'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36',
+	Authorization: 'Bearer token123',
+	'User-Agent':
+		'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36',
+	loveagri: 'you',
+}
 
 const requestOptions = {
 	method: 'GET',
 	headers: myHeaders,
 	redirect: 'follow',
-	body:JSON.stringify({ key: 'value' });
+	body: JSON.stringify({ key: 'value' }),
 }
 
 /**
