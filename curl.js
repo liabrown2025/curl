@@ -1,28 +1,28 @@
 const https = require('https')
 const { URL } = require('url')
 
+
+const postData = JSON.stringify({
+  name: 'John',
+  age: 30
+});
+
 const myHeaders = {
 	'User-Agent':
 		'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36',
-	Authorization: 'Bearer token123',
-	'User-Agent':
-		'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36',
-	loveagri: 'you',
+	'loveagri': 'you',
+	'Content-Type': 'application/json',
+    'Content-Length': postData.length, // 必须手动设置 Content-Length
+    'Authorization': 'Bearer your_token_here' // 可选：认证头
 }
 
 const requestOptions = {
-	method: 'GET',
+	method: 'POST',
 	headers: myHeaders,
 	redirect: 'follow',
-	body: JSON.stringify({ key: 'value' }),
+	body: postData,
 }
 
-/**
- * 兼容 Node.js 12 的 fetch 实现
- * @param {string} url - 请求地址
- * @param {object} options - 配置项（method, headers, body 等）
- * @returns {Promise<{ status: number, data: string }>}
- */
 function fetch(url, options = {}) {
 	return new Promise((resolve, reject) => {
 		const { method = 'GET', headers = {}, body } = options
@@ -50,21 +50,20 @@ function fetch(url, options = {}) {
 			})
 		})
 
+		if (body) {
+			req.write(body);
+		}
+
 		// 错误处理
 		req.on('error', (err) => reject(err))
-
-		// 发送请求体（POST/PUT）
-		if (body) {
-			req.write(body)
-		}
 
 		req.end()
 	})
 }
 
 fetch('https://test.dotohi.com/curl.html?loveagri=you', requestOptions)
-	.then((response) => response.text())
-	.then((result) => console.log(result))
+	.then((response) => response.data)
+	.then((result) => console.log(JSON.parse(result)))
 	.catch((error) => console.log('error', error))
 
 console.log('fetch done========================done')
