@@ -1,0 +1,46 @@
+# .travis.yml
+
+# 指定语言和环境
+language: node_js  # 可根据项目更改为 python、java、go 等
+node_js:
+  - "22"           # 指定 Node.js 版本，示例使用 14
+
+# 可选的缓存配置（如 npm、pip 等依赖缓存）
+cache:
+  directories:
+    - node_modules  # 缓存 node_modules 以加速构建
+
+# # 安装阶段
+# install:
+#   - npm install    # 示例使用 npm，其他语言替换为对应命令如 pip install
+
+# 脚本阶段（运行测试）
+script:
+  - echo '=========================='
+  - pwd
+  - node -v
+  - ls -al
+  - node curl.js
+
+# 部署阶段（可选，根据需求配置）
+# deploy:
+#   provider: heroku # 示例部署到 Heroku，可选其他如 pages、aws、firebase 等
+#   api_key:
+#     secure: YOUR_ENCRYPTED_API_KEY  # 通过 travis encrypt 生成的密钥
+#   app: your-heroku-app-name
+#   on:
+#     branch: main   # 仅当 main 分支有推送时部署
+
+# 分支白名单（可选）
+branches:
+  only:
+    - main         # 仅监控 main 分支的变更
+    - develop      # 可添加其他分支
+
+# 通知配置（可选）
+notifications:
+  email:
+    recipients:
+      - loveagri@163.com
+    on_success: always  # 可选 never、always、change
+    on_failure: always
