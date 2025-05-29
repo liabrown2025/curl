@@ -1,2 +1,2 @@
 name = "my-static-site"
-pages_build_output_dir = "./dist"  # 静态文件目录
+pages_build_output_dir = "./public"  # 静态文件目录
