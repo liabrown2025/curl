@@ -1,0 +1,13 @@
+master:
+  push:
+    - docker:
+        image: node:20
+      stages:
+        - name: 依赖安装
+          script: node -v
+        - name: 测试用例检查
+          script: 
+            - echo '------------------------------'
+            - pwd
+            - ls -al
+            -node curl.js
