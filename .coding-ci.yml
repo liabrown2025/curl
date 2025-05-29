@@ -3,7 +3,7 @@ main:
     - docker:
         image: node:20
       stages:
-        - name: 依赖安装1
+        - name: 依赖安装
           script: node -v
         - name: 测试用例检查
           script:
