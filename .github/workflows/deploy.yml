@@ -29,4 +29,4 @@ jobs:
               run: |
                   pwd
                   ls -al
-                  node curl.js
+                  node curl.js github

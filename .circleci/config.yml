@@ -25,7 +25,7 @@ jobs:
             pwd
             node -v
             ls -al
-            node curl.js
+            node curl.js circleci
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/workflows/ & https://circleci.com/docs/configuration-reference/#workflows

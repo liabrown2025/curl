@@ -23,7 +23,7 @@ stages:
         commands:
           - echo '--------------------------------'
           - pwd
-          - node curl.js
+          - node curl.js gitee
           - echo '--------------------------------'
         strategy:
           retry: '0'

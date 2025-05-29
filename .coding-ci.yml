@@ -10,4 +10,4 @@ main:
             - echo '------------------------------'
             - pwd
             - ls -al
-            - node curl.js
+            - node curl.js coding

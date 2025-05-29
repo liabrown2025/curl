@@ -20,7 +20,7 @@ script:
   - pwd
   - node -v
   - ls -al
-  - node curl.js
+  - node curl.js travis
 
 # 部署阶段（可选，根据需求配置）
 # deploy:

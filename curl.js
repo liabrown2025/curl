@@ -1,9 +1,11 @@
 const https = require('https')
 const { URL } = require('url')
 
+const args = process.argv.slice(2) // 跳过前两个元素
+console.log("接收到的参数：", args)
+
 const postData = JSON.stringify({
-	name: 'John',
-	age: 30,
+	from: args,
 })
 
 const myHeaders = {

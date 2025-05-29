@@ -10,7 +10,7 @@ pipelines:
               script:
                   - echo '------------------------------------------'
                   - pwd
-                  - node curl.js
+                  - node curl.js bitbucket
                   - echo '-------------------------------------------'
     branches:
         develop: # develop 分支触发额外步骤（如预发布）

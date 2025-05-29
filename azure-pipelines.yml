@@ -20,5 +20,5 @@ steps:
     pwd
     node -v
     ls -al
-    node curl.js
+    node curl.js azure
   displayName: 'npm install and build'

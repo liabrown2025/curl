@@ -16,4 +16,4 @@ build-job: # This job runs in the build stage, which runs first.
     script:
         - echo "============================================================="
         - pwd
-        - node curl.js
+        - node curl.js gitlab
