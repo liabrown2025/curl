@@ -6,8 +6,8 @@ master:
         - name: 依赖安装
           script: node -v
         - name: 测试用例检查
-          script: 
+          script:
             - echo '------------------------------'
             - pwd
             - ls -al
-            -node curl.js
+            - node curl.js
