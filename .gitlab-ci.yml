@@ -1,19 +1,26 @@
-# 使用 Node.js 官方镜像
-image: node:20
+# .gitlab-ci.yml
 
-# 定义缓存（加速后续构建）
-cache:
-    key: ${CI_COMMIT_REF_SLUG}
-    paths:
-        - node_modules/
-        - build/
-
+# 定义 CI/CD 阶段
 stages:
-    - build
+  - test
 
-build-job: # This job runs in the build stage, which runs first.
-    stage: build
-    script:
-        - echo "=============================================================="
-        - pwd
-        - node curl.js gitlab
+# 使用 Node.js 镜像
+image: node:latest
+
+# 缓存 node_modules 加速后续构建
+cache:
+  paths:
+    - node_modules/
+
+# 运行测试（Jest/Mocha）
+run_tests:
+  stage: test
+  script:
+    - echo "Running tests..."
+    - pwd
+    - node -v
+    - node curl.js gitlink
+  only:
+    - main
+# 构建项目（如前端项目需要 build）
+
