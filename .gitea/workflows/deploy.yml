@@ -7,8 +7,8 @@ on:
     branches: ["main"] # PR 到 main 分支时触发测试
 
 jobs:
-  build-and-test:
-    runs-on: ubuntu:22.04
+  show-info:
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
