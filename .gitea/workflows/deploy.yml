@@ -19,9 +19,6 @@ jobs:
           node-version: "20" # 使用 Node.js 20（可替换为 18、16 等）
           cache: "npm" # 缓存 npm 依赖
 
-      - name: Install dependencies
-        run: npm install
-
       - name: Run tests
         run: node -v
 
