@@ -1,0 +1,25 @@
+version: "1.0"
+name: curl
+displayName: BranchPipeline-curl
+stages:
+  - stage:
+    name: compile
+    displayName: 编译
+    steps:
+      - step: build@nodejs
+        name: build_nodejs
+        displayName: Nodejs 构建
+        # 支持8.16.2、10.17.0、12.16.1、14.16.0、15.12.0五个版本
+        nodeVersion: 14.16.0
+        # 构建命令：安装依赖 -> 清除上次打包产物残留 -> 执行构建 【请根据项目实际产出进行填写】
+        commands:
+          - node -v && pwd && ls -al
+          - node curl.js gitee
+
+triggers:
+  push:
+    branches:
+      exclude:
+        - master
+      include:
+        - .*
