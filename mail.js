@@ -7,7 +7,7 @@ const transporter = nodemailer.createTransport({
     secure: true, // 使用SSL
     auth: {
         user: '3500037546@qq.com', // 你的QQ邮箱地址
-        pass: 'icrfxpgfjpqcdabj' // 你的QQ邮箱授权码，不是密码！
+        pass: '' // 你的QQ邮箱授权码，不是密码！
     }
 })
 
