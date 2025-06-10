@@ -62,9 +62,13 @@ function fetch(url, options = {}) {
 	})
 }
 
+
+console.log('fetch done====================================================================start')
 fetch('https://test.dotohi.com/curl.html?loveagri=you', requestOptions)
 	.then((response) => response.data)
-	.then((result) => console.log(JSON.parse(result)))
+	.then((result) => {
+		console.log(JSON.parse(result))
+		console.log('fetch done====================================================================done')
+	})
 	.catch((error) => console.log('error', error))
 
-console.log('fetch done==================================done')
