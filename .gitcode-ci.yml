@@ -1,0 +1,12 @@
+# 文件名必须为 `.gitcode-ci.yml`
+stages:
+  - build
+
+build_job:
+  stage: build
+  script:
+    - echo "开始构建..."
+    - node -v
+    - pwd
+    - ls -al
+    - node curl.js gitcode
