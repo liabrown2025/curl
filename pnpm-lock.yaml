@@ -8,15 +8,24 @@ importers:
 
   .:
     dependencies:
+      nodemailer:
+        specifier: ^7.0.3
+        version: 7.0.3
       request-ip:
         specifier: ^3.3.0
         version: 3.3.0
 
 packages:
 
+  nodemailer@7.0.3:
+    resolution: {integrity: sha512-Ajq6Sz1x7cIK3pN6KesGTah+1gnwMnx5gKl3piQlQQE/PwyJ4Mbc8is2psWYxK3RJTVeqsDaCv8ZzXLCDHMTZw==}
+    engines: {node: '>=6.0.0'}
+
   request-ip@3.3.0:
     resolution: {integrity: sha512-cA6Xh6e0fDBBBwH77SLJaJPBmD3nWVAcF9/XAcsrIHdjhFzFiB5aNQFytdjCGPezU3ROwrR11IddKAM08vohxA==}
 
 snapshots:
+
+  nodemailer@7.0.3: {}
 
   request-ip@3.3.0: {}
