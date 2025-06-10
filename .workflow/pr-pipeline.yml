@@ -1,6 +1,6 @@
 version: '1.0'
-name: branch-pipeline
-displayName: BranchPipeline
+name: pr-pipeline
+displayName: PRPipeline
 stages:
   - stage: 
     name: compile
@@ -29,23 +29,8 @@ stages:
         # 上传到制品库时的制品命名，默认output
         artifactName: output
         dependsOn: build_nodejs
-  - stage: 
-    name: release
-    displayName: 发布
-    steps:
-      - step: publish@release_artifacts
-        name: publish_release_artifacts
-        displayName: '发布'
-        # 上游上传制品任务的产出
-        dependArtifact: output
-        # 发布制品版本号
-        version: '1.0.0.0'
-        # 是否开启版本号自增，默认开启
-        autoIncrement: true
 triggers:
-  push:
+  pr:
     branches:
-      exclude:
-        - master
       include:
-        - .*
+        - master
